@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Prod</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{d7eda099-25d8-4686-b3f0-98d0f47bb3ca}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Prod</RootNamespace>
+    <AssemblyName>Prod</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="preprod\" />
+    <Folder Include="preprod\Tables\" />
+    <Folder Include="score\" />
+    <Folder Include="score\Tables\" />
+    <Folder Include="history\" />
+    <Folder Include="history\Tables\" />
+    <Folder Include="trains\" />
+    <Folder Include="trains\Tables\" />
+    <Folder Include="sbme\" />
+    <Folder Include="sbme\Tables\" />
+    <Folder Include="wonderbox\" />
+    <Folder Include="wonderbox\Views\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="trains\Functions\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="sso\" />
+    <Folder Include="sso\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="wonderbox\Stored Procedures\" />
+    <Folder Include="trenordapp\" />
+    <Folder Include="trenordapp\Stored Procedures\" />
+    <Folder Include="trains\Stored Procedures\" />
+    <Folder Include="score\Stored Procedures\" />
+    <Folder Include="sbme\Stored Procedures\" />
+    <Folder Include="tln\" />
+    <Folder Include="tln\Stored Procedures\" />
+    <Folder Include="tln\Synonyms\" />
+    <Folder Include="wonderbox\Synonyms\" />
+    <Folder Include="trains\Views\" />
+    <Folder Include="dbo\Sequences\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\WfInvoices.sql" />
+    <Build Include="dbo\Tables\Partners.sql" />
+    <Build Include="dbo\Tables\Card.sql" />
+    <Build Include="dbo\Tables\WfFinalQueueTickets.sql" />
+    <Build Include="dbo\Tables\CardHolder.sql" />
+    <Build Include="dbo\Tables\TariffCategoryRules.sql" />
+    <Build Include="dbo\Tables\CardPortfolio.sql" />
+    <Build Include="dbo\Tables\Client.sql" />
+    <Build Include="dbo\Tables\Client_Wf_Template.sql" />
+    <Build Include="score\Tables\Associations.sql" />
+    <Build Include="dbo\Tables\Client_Product_Map.sql" />
+    <Build Include="dbo\Tables\MailTemplate.sql" />
+    <Build Include="score\Tables\Attributions.sql" />
+    <Build Include="dbo\Tables\Client_Service_Map.sql" />
+    <Build Include="score\Tables\AttributionStatus.sql" />
+    <Build Include="dbo\Tables\ContractPortfolio.sql" />
+    <Build Include="dbo\Tables\CardProfiles.sql" />
+    <Build Include="dbo\Tables\WfExpiredFinalQueue.sql" />
+    <Build Include="dbo\Tables\CP_Profile.sql" />
+    <Build Include="score\Tables\Combinations.sql" />
+    <Build Include="dbo\Tables\WfFinalQueue.sql" />
+    <Build Include="dbo\Tables\FinalQueueState.sql" />
+    <Build Include="dbo\Tables\WareHouseTemplate.sql" />
+    <Build Include="dbo\Tables\InvoicesNumbers.sql" />
+    <Build Include="dbo\Tables\ContractTravelTypes.sql" />
+    <Build Include="dbo\Tables\WareHouseTemplateField.sql" />
+    <Build Include="dbo\Tables\Mail.sql" />
+    <Build Include="history\Tables\WfFinalQueue.sql" />
+    <Build Include="dbo\Tables\PromoBennet.sql" />
+    <Build Include="dbo\Tables\TariffOvercharges.sql" />
+    <Build Include="history\Tables\Mail.sql" />
+    <Build Include="history\Tables\WfStartErrors.sql" />
+    <Build Include="dbo\Tables\TariffValidity.sql" />
+    <Build Include="history\Tables\WfWareHouse.sql" />
+    <Build Include="history\Tables\WfFinalQueueItems.sql" />
+    <Build Include="history\Tables\WfFinalQueueParams.sql" />
+    <Build Include="history\Tables\PaymentConfirmations.sql" />
+    <Build Include="history\Tables\WfInvoices.sql" />
+    <Build Include="dbo\Tables\Tariff.sql" />
+    <Build Include="dbo\Tables\WfExpiredFinalQueueItems.sql" />
+    <Build Include="dbo\Tables\Coupons.sql" />
+    <Build Include="dbo\Tables\WfExpiredFinalQueueParams.sql" />
+    <Build Include="dbo\Tables\CouponsUsageHistory.sql" />
+    <Build Include="dbo\Tables\TariffCategory.sql" />
+    <Build Include="dbo\Tables\TariffOverchargeCombinations.sql" />
+    <Build Include="dbo\Tables\CouponTypes.sql" />
+    <Build Include="dbo\Tables\WfFinalQueueItems.sql" />
+    <Build Include="trains\Tables\TrainStationsOverrides.sql" />
+    <Build Include="dbo\Tables\CouponTypeSku.sql" />
+    <Build Include="dbo\Tables\WfFinalQueueParams.sql" />
+    <Build Include="dbo\Tables\PaymentErrorOrders.sql" />
+    <Build Include="dbo\Tables\WfSession.sql" />
+    <Build Include="dbo\Tables\WfToken.sql" />
+    <Build Include="dbo\Tables\WfVatRates.sql" />
+    <Build Include="sbme\Tables\Tariffs.sql" />
+    <Build Include="dbo\Tables\UndeliverableMail.sql" />
+    <Build Include="dbo\Tables\ProductAvailableDays.sql" />
+    <Build Include="trains\Tables\TrainPaths.sql" />
+    <Build Include="sbme\Tables\TariffPrices.sql" />
+    <Build Include="dbo\Tables\Gateways.sql" />
+    <Build Include="dbo\Tables\PaymentChannels.sql" />
+    <Build Include="dbo\Tables\PaymentConfirmations.sql" />
+    <Build Include="dbo\Tables\CP_Tariff.sql" />
+    <Build Include="dbo\Tables\PaidOrders.sql" />
+    <Build Include="dbo\Tables\StoredProcedureRunInfo.sql" />
+    <Build Include="dbo\Tables\WfConfiguration.sql" />
+    <Build Include="dbo\Tables\Companies.sql" />
+    <Build Include="dbo\Tables\WfWareHouse.sql" />
+    <Build Include="dbo\Tables\CouponsDetails.sql" />
+    <Build Include="dbo\Tables\WfStartErrors.sql" />
+    <Build Include="dbo\Tables\WfStartTraces.sql" />
+    <Build Include="dbo\Tables\ProductGroup.sql" />
+    <Build Include="dbo\Tables\ProductCodes.sql" />
+    <Build Include="trains\Tables\PassengerClass.sql" />
+    <Build Include="trains\Tables\TariffTypes.sql" />
+    <Build Include="dbo\Tables\WorkflowTypes.sql" />
+    <Build Include="trains\Tables\TrainCategory.sql" />
+    <Build Include="dbo\Tables\Workflows.sql" />
+    <Build Include="trains\Tables\TrainStations.sql" />
+    <Build Include="dbo\Tables\WfVatCodes.sql" />
+    <None Include="wonderbox\Views\OrdersToReconcile.sql" />
+    <Build Include="dbo\Views\WareHouseData.sql" />
+    <Build Include="dbo\Views\FullPaymentConfirmations.sql" />
+    <Build Include="dbo\Views\FullWfFinalQueue.sql" />
+    <Build Include="dbo\Views\FullWfWarehouse.sql" />
+    <Build Include="dbo\Views\v_ReportMensileVoucherPromoBennetUtilizzati.sql" />
+    <Build Include="dbo\Views\v_ReportMensileVoucherStudyInMilanUtilizzati.sql" />
+    <Build Include="dbo\Views\CouponInfoForLegacy.sql" />
+    <None Include="wonderbox\Views\CustomerSsoUser.sql" />
+    <None Include="wonderbox\Views\PendingGiftCardsNotInUse.sql" />
+    <None Include="wonderbox\Views\TotalOrdersToken.sql" />
+    <None Include="wonderbox\Views\InvalidGiftCardUsageHistory.sql" />
+    <None Include="wonderbox\Views\ProductSpecificAttributes.sql" />
+    <None Include="wonderbox\Views\CustomersAttributes.sql" />
+    <None Include="wonderbox\Views\FinalizedOrdersToReconcile.sql" />
+    <Build Include="Security\WfDataUsr.sql" />
+    <Build Include="Security\WfDataUsr_1.sql" />
+    <Build Include="Security\WfBatchUsr.sql" />
+    <Build Include="Security\WfBatchUsr_1.sql" />
+    <Build Include="Security\DMZ-NC_lonal0-cons.sql" />
+    <Build Include="Security\DMZ-NC_lonal0-cons_1.sql" />
+    <Build Include="Security\DMZ-NC_WfEngine.sql" />
+    <Build Include="Security\DMZ-NC_WfEngine_1.sql" />
+    <Build Include="Security\WfReadUsr.sql" />
+    <Build Include="Security\WfReadUsr_1.sql" />
+    <Build Include="Security\DMZ-NC_pedma0.sql" />
+    <Build Include="Security\DMZ-NC_pedma0_1.sql" />
+    <Build Include="Security\WfReporting.sql" />
+    <Build Include="Security\WfReporting_1.sql" />
+    <Build Include="trains\Functions\GeneratePNR.sql" />
+    <Build Include="dbo\Functions\ReportParameters.sql" />
+    <Build Include="dbo\Functions\TariffCategorySelector.sql" />
+    <Build Include="dbo\Functions\NewWareHouseData.sql" />
+    <None Include="sso\Functions\UserData.sql" />
+    <Build Include="dbo\Functions\AvailableProfile.sql" />
+    <Build Include="dbo\Stored Procedures\p_WfFinalQueueInsert.sql" />
+    <Build Include="dbo\Stored Procedures\p_WfSaveFinalQueueParam.sql" />
+    <Build Include="dbo\Stored Procedures\p_WfSessionCleaning.sql" />
+    <Build Include="dbo\Stored Procedures\BestBuyersByTotalPrice.sql" />
+    <Build Include="dbo\Stored Procedures\p_WfSessionInsert.sql" />
+    <Build Include="dbo\Stored Procedures\BestBuyersByTotalQuantity.sql" />
+    <Build Include="dbo\Stored Procedures\p_WfStart.sql" />
+    <Build Include="dbo\Stored Procedures\Validation_B2B_InitEndWorkflow.sql" />
+    <Build Include="wonderbox\Stored Procedures\MOVE_TO_InitEndWorkflow.sql" />
+    <Build Include="dbo\Stored Procedures\p_CouponsWriteWarehouse.sql" />
+    <Build Include="dbo\Stored Procedures\MailInsert.sql" />
+    <Build Include="wonderbox\Stored Procedures\MissingWareHouse.sql" />
+    <Build Include="wonderbox\Stored Procedures\MissingPaymentConfirmations.sql" />
+    <Build Include="wonderbox\Stored Procedures\StrangeOrders.sql" />
+    <Build Include="trenordapp\Stored Procedures\StrangeOrders.sql" />
+    <Build Include="dbo\Stored Procedures\ReportOrdersFull.sql" />
+    <Build Include="dbo\Stored Procedures\ReportCustomers.sql" />
+    <Build Include="dbo\Stored Procedures\OrdersInfo.sql" />
+    <Build Include="trains\Stored Procedures\CalculateKms.sql" />
+    <Build Include="trenordapp\Stored Procedures\SameOrderIdDifferentUserOrders.sql" />
+    <Build Include="dbo\Stored Procedures\p_WfFinalQueueRetrySpecificError.sql" />
+    <Build Include="dbo\Stored Procedures\ReportOrders.sql" />
+    <Build Include="dbo\Stored Procedures\p_MoveUndeliverableMail.sql" />
+    <Build Include="dbo\Stored Procedures\ReportOrdersMid.sql" />
+    <Build Include="dbo\Stored Procedures\TotalOrders.sql" />
+    <Build Include="dbo\Stored Procedures\RiabilitaVoucherPromoBennet.sql" />
+    <Build Include="score\Stored Procedures\ExtractPendingAttributions.sql" />
+    <Build Include="dbo\Stored Procedures\SetReceiptDate.sql" />
+    <Build Include="score\Stored Procedures\InvalidateAssociation.sql" />
+    <Build Include="dbo\Stored Procedures\SetInvoiceDate.sql" />
+    <Build Include="score\Stored Procedures\NewAssociation.sql" />
+    <Build Include="dbo\Stored Procedures\GetReceiptsToProduce.sql" />
+    <Build Include="score\Stored Procedures\NewAttribution.sql" />
+    <Build Include="dbo\Stored Procedures\GetInvoicesToProduce.sql" />
+    <Build Include="score\Stored Procedures\SendPendingAttribution.sql" />
+    <Build Include="dbo\Stored Procedures\p_CouponInsert.sql" />
+    <Build Include="dbo\Stored Procedures\p_PaymentErrorOrdersInsert.sql" />
+    <Build Include="dbo\Stored Procedures\p_WfExpiredFinalQueueCleaning.sql" />
+    <Build Include="sbme\Stored Procedures\AlignTariffs.sql" />
+    <Build Include="sbme\Stored Procedures\AlignTariffPrices.sql" />
+    <Build Include="wonderbox\Stored Procedures\NewWareHouse.sql" />
+    <Build Include="wonderbox\Stored Procedures\NewInvoices.sql" />
+    <Build Include="dbo\Stored Procedures\OrdersMonitor.sql" />
+    <Build Include="trains\Stored Procedures\AlignDataFromTln.sql" />
+    <Build Include="dbo\Stored Procedures\p_PaymentConfirmationsInsert.sql" />
+    <Build Include="wonderbox\Stored Procedures\InitEndWorkflowNew2.sql" />
+    <Build Include="dbo\Stored Procedures\ReportTotalOrders.sql" />
+    <Build Include="dbo\Stored Procedures\AlignUserInfoWareHouse.sql" />
+    <Build Include="dbo\Stored Procedures\p_WfStartTracesCleaning.sql" />
+    <Build Include="tln\Stored Procedures\ExtractWareHouse.sql" />
+    <Build Include="tln\Stored Procedures\ExtractTariffs.sql" />
+    <Build Include="dbo\Stored Procedures\CleanToken.sql" />
+    <Build Include="wonderbox\Stored Procedures\ExtractSsoInfo.sql" />
+    <Build Include="dbo\Stored Procedures\B2B_InitEndWorkflow.sql" />
+    <Build Include="dbo\Stored Procedures\CardPortfolio_delete.sql" />
+    <Build Include="dbo\Stored Procedures\GetOrderInvoiceNumber.sql" />
+    <Build Include="wonderbox\Stored Procedures\ExtractPendingGiftCards.sql" />
+    <Build Include="dbo\Stored Procedures\p_WfRemoveCopiedFinalQueueParams.sql" />
+    <Build Include="dbo\Stored Procedures\MailInvoiceReceiptInsert.sql" />
+    <Build Include="dbo\Stored Procedures\p_WfCleanFinalQueue.sql" />
+    <Build Include="dbo\Stored Procedures\p_WfCopyFinalQueueParams.sql" />
+    <Build Include="Security\history.sql" />
+    <Build Include="Security\sbme.sql" />
+    <Build Include="Security\score.sql" />
+    <Build Include="Security\sso.sql" />
+    <Build Include="Security\tln.sql" />
+    <Build Include="Security\trains.sql" />
+    <Build Include="Security\trenordapp.sql" />
+    <Build Include="Security\wonderbox.sql" />
+    <Build Include="tln\Synonyms\vol_ordine.sql" />
+    <Build Include="tln\Synonyms\Wfengine_warehouse.sql" />
+    <Build Include="wonderbox\Synonyms\Orders.sql" />
+    <Build Include="wonderbox\Synonyms\OrderItems.sql" />
+    <Build Include="wonderbox\Synonyms\GiftCards.sql" />
+    <Build Include="wonderbox\Synonyms\Products.sql" />
+    <Build Include="wonderbox\Synonyms\Addresses.sql" />
+    <Build Include="wonderbox\Synonyms\Countries.sql" />
+    <Build Include="wonderbox\Synonyms\Customers.sql" />
+    <Build Include="wonderbox\Synonyms\GiftCardUsageHistory.sql" />
+    <Build Include="wonderbox\Synonyms\ProductAttributeMappings.sql" />
+    <Build Include="wonderbox\Synonyms\ProductAttributes.sql" />
+    <None Include="Security\WonderBox_1.sql" />
+    <Build Include="tln\Synonyms\vol_ArticoloOrdineContratto.sql" />
+    <Build Include="tln\Synonyms\vol_ArticoloOrdine.sql" />
+    <Build Include="Security\reporting.sql" />
+    <Build Include="trains\Tables\TariffValidityRules.sql" />
+    <Build Include="trains\Tables\TariffPrices.sql" />
+    <Build Include="trains\Tables\TariffDetails.sql" />
+    <Build Include="trains\Tables\TariffAvailableDays.sql" />
+    <Build Include="trains\Tables\ProductCodesDetails.sql" />
+    <Build Include="trains\Tables\Client_Wf_Template.sql" />
+    <Build Include="dbo\Tables\Holidays.sql" />
+    <Build Include="dbo\Functions\ProductPrice.sql" />
+    <Build Include="dbo\Stored Procedures\p_CouponsUsageHistoryUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\p_CouponsUsageHistoryInsert.sql" />
+    <Build Include="dbo\Stored Procedures\p_CouponsUsageHistoryClean.sql" />
+    <Build Include="dbo\Stored Procedures\ExtractCouponInfo.sql" />
+    <Build Include="trains\Tables\SpecialTrainsSku.sql" />
+    <Build Include="trains\Tables\SpecialTrains.sql" />
+    <Build Include="trains\Tables\ReservationsDetails.sql" />
+    <Build Include="dbo\Tables\ReservationStatusActions.sql" />
+    <Build Include="dbo\Tables\ReservationStatus.sql" />
+    <Build Include="dbo\Tables\Reservations.sql" />
+    <Build Include="dbo\Tables\Cities.sql" />
+    <Build Include="trains\Views\SpecialTrainsData.sql" />
+    <Build Include="dbo\Views\ReservationsData.sql" />
+    <Build Include="dbo\Functions\GetTariffDetailsId.sql" />
+    <Build Include="trains\Functions\ValidityDates.sql" />
+    <Build Include="dbo\Stored Procedures\ReservationUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\ReservationInsert.sql" />
+    <Build Include="dbo\Stored Procedures\ReservationFinalize.sql" />
+    <None Include="dbo\Stored Procedures\PromoBennetUsedVoucher.sql" />
+    <Build Include="trains\Tables\SpecialTrainsDirections.sql" />
+    <Build Include="trains\Tables\ReservationsTariffs_1.sql" />
+    <Build Include="dbo\Stored Procedures\ReservationRemoveTicket.sql" />
+    <Build Include="dbo\Stored Procedures\ReservationAddSpecialTicket.sql" />
+    <Build Include="dbo\Stored Procedures\ReservationAddNormalTickets.sql" />
+    <Build Include="dbo\Stored Procedures\ReportSpecialTrains.sql" />
+    <Build Include="dbo\Stored Procedures\ReportReservations.sql" />
+    <Build Include="dbo\Stored Procedures\PromoBennetUsedVoucher_1.sql" />
+    <Build Include="tln\Synonyms\Stazioni.sql" />
+    <Build Include="tln\Synonyms\pat_tickets.sql" />
+    <Build Include="tln\Synonyms\pat_ticketpnr.sql" />
+    <Build Include="trains\Stored Procedures\UpdateTiloPrices.sql" />
+    <Build Include="dbo\Stored Procedures\TotalGroupOrders.sql" />
+    <Build Include="dbo\Tables\BackUpTicket.sql" />
+    <Build Include="dbo\Tables\BackUpReceipt.sql" />
+    <Build Include="dbo\Tables\BackUpInvoice.sql" />
+    <Build Include="dbo\Stored Procedures\DocumentsBackUpStrategy.sql" />
+    <Build Include="dbo\Tables\FreeGiftCredit.sql" />
+    <Build Include="dbo\Tables\FreeGift.sql" />
+    <Build Include="dbo\Tables\FreeGiftCalendar.sql" />
+    <Build Include="dbo\Tables\IntegratiMultipliTemp.sql" />
+    <Build Include="dbo\Tables\IntegratiMultipli.sql" />
+    <Build Include="wonderbox\Views\TotalOrdersToken_1.sql" />
+    <Build Include="wonderbox\Views\ProductSpecificAttributes_1.sql" />
+    <Build Include="wonderbox\Views\PendingGiftCardsNotInUse_1.sql" />
+    <Build Include="wonderbox\Views\OrdersToReconcile_1.sql" />
+    <Build Include="wonderbox\Views\InvalidGiftCardUsageHistory_1.sql" />
+    <Build Include="wonderbox\Views\FinalizedOrdersToReconcile_1.sql" />
+    <Build Include="wonderbox\Views\CustomerSsoUser_1.sql" />
+    <Build Include="wonderbox\Views\CustomersAttributes_1.sql" />
+    <Build Include="dbo\Views\ClientWfTemplate.sql" />
+    <Build Include="sso\Functions\UserData_1.sql" />
+    <Build Include="dbo\Stored Procedures\AllineaIntegratiMultipliTemp.sql" />
+    <Build Include="wonderbox\Synonyms\SpecificationAttributeOption.sql" />
+    <Build Include="wonderbox\Synonyms\SpecificationAttribute.sql" />
+    <Build Include="wonderbox\Synonyms\Product_SpecificationAttribute_Mapping.sql" />
+    <Build Include="wonderbox\Synonyms\GenericAttribute.sql" />
+    <Build Include="tln\Synonyms\wfengine_centroidi_stazioni_localities.sql" />
+    <Build Include="tln\Synonyms\vol_StazioneSbme.sql" />
+    <Build Include="tln\Synonyms\vol_Percorso.sql" />
+    <Build Include="tln\Synonyms\vol_CodiceRichiestaProfilo.sql" />
+    <Build Include="trains\Tables\TrainStationsBCK.sql" />
+    <Build Include="dbo\Tables\WfInvoicesVatNumberNoIt.sql" />
+    <Build Include="dbo\Tables\TreniNeviCodes2.sql" />
+    <Build Include="dbo\Tables\TreniNeviCodes.sql" />
+    <Build Include="dbo\Tables\TariffStibmMap.sql" />
+    <Build Include="dbo\Tables\STIBMZone.sql" />
+    <Build Include="dbo\Tables\StibmStazioniZone.sql" />
+    <Build Include="dbo\Tables\StibmPricingModels.sql" />
+    <Build Include="dbo\Tables\RimborsiAppBova.sql" />
+    <Build Include="dbo\Tables\PecMailImport.sql" />
+    <Build Include="dbo\Tables\Numbers.sql" />
+    <Build Include="dbo\Tables\invoiceTable.sql" />
+    <Build Include="dbo\Tables\InvoicesFatturazioneEStaging.sql" />
+    <Build Include="dbo\Tables\EInvoiceInfo.sql" />
+    <Build Include="dbo\Tables\Country.sql" />
+    <Build Include="dbo\Tables\Codes.sql" />
+    <Build Include="dbo\Views\InforcertData.sql" />
+    <Build Include="dbo\Views\FindInvoicesByNumberAndCurrentYear.sql" />
+    <Build Include="dbo\Views\CarnetAttivi.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\wf_FindTariffMapIdAlkemy.sql" />
+    <Build Include="dbo\Functions\StringSplitWfData.sql" />
+    <Build Include="dbo\Functions\StringSplit.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateMilanoCardTariffs.sql" />
+    <Build Include="dbo\Stored Procedures\PrepareElectronicInvoicing.sql" />
+    <Build Include="dbo\Stored Procedures\CarnetFix.sql" />
+    <Build Include="dbo\Stored Procedures\B2B_InitEndWorkflowStibm.sql" />
+    <Build Include="dbo\Stored Procedures\B2B_CreateIvoice.sql" />
+    <Build Include="wonderbox\Synonyms\StateProvince.sql" />
+    <Build Include="dbo\Sequences\AlkemySequence.sql" />
+  </ItemGroup>
+</Project>

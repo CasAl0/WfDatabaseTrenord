@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [WfReadUsr]
+    WITH PASSWORD = N'lzl;x5{guu {j7lQ.d{ajNa$msFT7_&#$!~<iwq{cmqcl2q|', SID = 0xC479DB47E267EC439746A48C0093B0A5, DEFAULT_DATABASE = [WfData], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

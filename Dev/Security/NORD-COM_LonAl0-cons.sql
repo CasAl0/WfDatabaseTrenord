@@ -1,0 +1,2 @@
+﻿CREATE USER [NORD-COM\LonAl0-cons] FOR LOGIN [NORD-COM\LonAl0-cons];
+

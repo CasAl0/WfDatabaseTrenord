@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [WfDataUsr]
+    WITH PASSWORD = N'%lzlHex{guKu{jldf{!aLja}msFT7_&#$!~<iwbq{7xc9mq&', SID = 0xF992CEC784093E44A6D3775E717A65FD, DEFAULT_DATABASE = [WfData], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

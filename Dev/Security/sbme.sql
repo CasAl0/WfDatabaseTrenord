@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [sbme]
+    AUTHORIZATION [dbo];
+

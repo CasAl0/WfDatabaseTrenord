@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [NORD-COM\LonAl0-cons]
+    FROM WINDOWS WITH DEFAULT_LANGUAGE = [us_english];
+

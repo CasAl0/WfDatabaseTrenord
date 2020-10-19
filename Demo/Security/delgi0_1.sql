@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [delgi0]
+    WITH PASSWORD = N'#pskhzbb|sep{?i!ZeyqYlqjmsFT7_&#$!~<jrsku>{^I#aD', SID = 0x93CD6616684C2C4BB6359931096B15FA, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

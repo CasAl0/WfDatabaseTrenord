@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [WfReporting]
+    WITH PASSWORD = N'olzlB3x{gmEuu{j}fld{Iaj~msFT7_&#$!~<aT=V^iwq4pqI', SID = 0xF6143DC16B20AF4C9C7649800E137BD9, DEFAULT_DATABASE = [WfData], DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

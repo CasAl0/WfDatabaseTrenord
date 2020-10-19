@@ -1,0 +1,2 @@
+﻿CREATE USER [DMZ-NC\pedma0] FOR LOGIN [DMZ-NC\pedma0];
+

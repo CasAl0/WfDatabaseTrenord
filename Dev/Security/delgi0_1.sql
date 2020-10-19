@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [delgi0]
+    WITH PASSWORD = N'qy:xqxplGwtcKjh|hrpbzg+AmsFT7_&#$!~<bGOem|y7h!pp', SID = 0x93CD6616684C2C4BB6359931096B15FA, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

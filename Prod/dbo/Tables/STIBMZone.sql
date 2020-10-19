@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[STIBMZone] (
+    [ID]              BIGINT       IDENTITY (1, 1) NOT NULL,
+    [ID_PRICINGMODEL] BIGINT       NOT NULL,
+    [ZONA]            VARCHAR (10) NOT NULL,
+    [POSIZIONE]       INT          NOT NULL,
+    CONSTRAINT [PK_STIBMZone] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+
